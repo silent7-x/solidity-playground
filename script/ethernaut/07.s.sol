@@ -6,7 +6,7 @@ import {Force, ForceAttacker} from "../../src/ethernaut/07.sol";
 
 // forge script script/ethernaut/07.s.sol --rpc-url $SEPOLIA_RPC_URL --account PK1_SEPOLIA --sender <ADDRESS> --broadcast -vvvv
 // cast balance 0xa2f1BBA624fF9828826Ef3Bd8ab5cdA640589531 --rpc-url $SEPOLIA_RPC_URL
-// forge verify-contract --rpc-url $SEPOLIA_RPC_URL --etherscan-api-key $ETHERSCAN_API_KEY --watch 0xb6c2Ec883DaAac76D8922519E63f875c2ec65575 src/ethernaut/07.sol:Force
+// forge verify-contract --rpc-url $SEPOLIA_RPC_URL --etherscan-api-key $ETHERSCAN_API_KEY --watch 0xc2e36bb237d84edda991952d5ff84f64f0ced552 src/ethernaut/07.sol:Force
 
 contract ForceScript is Script {
     Force public forceContract =
