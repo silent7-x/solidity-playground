@@ -24,6 +24,7 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: stable
+          cache: false
 
       - name: Show Forge version
         run: |
