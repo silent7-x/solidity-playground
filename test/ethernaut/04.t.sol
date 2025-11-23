@@ -22,18 +22,10 @@ contract TelephoneTest is Test {
 
     function setUp() public {
         telephoneContract = new Telephone();
-        telephoneAttackerContract = new TelephoneAttacker(
-            address(telephoneContract)
-        );
+        telephoneAttackerContract = new TelephoneAttacker(address(telephoneContract));
 
-        console.log(
-            "TelephoneContract deployed at: ",
-            address(telephoneContract)
-        );
-        console.log(
-            "telephoneAttackerContract deployed at: ",
-            address(telephoneAttackerContract)
-        );
+        console.log("TelephoneContract deployed at: ", address(telephoneContract));
+        console.log("telephoneAttackerContract deployed at: ", address(telephoneAttackerContract));
     }
 
     function testChangeOwner() public {

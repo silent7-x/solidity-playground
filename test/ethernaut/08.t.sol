@@ -7,8 +7,7 @@ import {Vault} from "../../src/ethernaut/08.sol";
 contract VaultTest is Test {
     Vault public vault;
 
-    bytes32 internal constant SECRET =
-        keccak256(abi.encodePacked("ethernaut-level-08"));
+    bytes32 internal constant SECRET = keccak256(abi.encodePacked("ethernaut-level-08"));
 
     function setUp() public {
         vault = new Vault(SECRET);

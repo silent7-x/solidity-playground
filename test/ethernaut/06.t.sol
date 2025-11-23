@@ -20,9 +20,7 @@ contract DelegationTest is Test {
         // The fallback uses delegatecall so pwn() will run in Delegation's
         // storage context and overwrite its owner slot.
         vm.prank(address(1));
-        (bool ok, ) = address(delegationContract).call(
-            abi.encodeWithSelector(Delegate.pwn.selector)
-        );
+        (bool ok,) = address(delegationContract).call(abi.encodeWithSelector(Delegate.pwn.selector));
         require(ok, "delegatecall failed");
 
         console.log("Delegation owner after: ", delegationContract.owner());

@@ -12,20 +12,12 @@ contract ForceTest is Test {
     }
 
     function testHack() public {
-        ForceAttacker attacker = new ForceAttacker{value: 1 wei}(
-            address(forceContract)
-        );
-        console.log(
-            "Force contract balance before attack: ",
-            address(forceContract).balance
-        );
+        ForceAttacker attacker = new ForceAttacker{value: 1 wei}(address(forceContract));
+        console.log("Force contract balance before attack: ", address(forceContract).balance);
 
         attacker.attack();
 
-        console.log(
-            "Force contract balance after attack: ",
-            address(forceContract).balance
-        );
+        console.log("Force contract balance after attack: ", address(forceContract).balance);
         assertEq(address(forceContract).balance, 1 wei);
     }
 }

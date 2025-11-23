@@ -9,8 +9,7 @@ import {Force, ForceAttacker} from "../../src/ethernaut/07.sol";
 // forge verify-contract --rpc-url $SEPOLIA_RPC_URL --etherscan-api-key $ETHERSCAN_API_KEY --watch 0xc2e36bb237d84edda991952d5ff84f64f0ced552 src/ethernaut/07.sol:Force
 
 contract ForceScript is Script {
-    Force public forceContract =
-        Force(0xa2f1BBA624fF9828826Ef3Bd8ab5cdA640589531);
+    Force public forceContract = Force(0xa2f1BBA624fF9828826Ef3Bd8ab5cdA640589531);
     ForceAttacker public forceAttacker;
 
     function setUp() public {
@@ -21,10 +20,7 @@ contract ForceScript is Script {
     function run() public {
         vm.startBroadcast();
         forceAttacker.attack();
-        console.log(
-            "Force contract balance after attack: ",
-            address(forceContract).balance
-        );
+        console.log("Force contract balance after attack: ", address(forceContract).balance);
         vm.stopBroadcast();
     }
 }

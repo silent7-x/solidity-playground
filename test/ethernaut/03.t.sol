@@ -11,14 +11,8 @@ contract CoinFlipTest is Test {
     function setUp() public {
         coinFlipContract = new CoinFlip();
         coinFlipAttackContract = new CoinFlipAttack(address(coinFlipContract));
-        console.log(
-            "CoinFlip contract deployed at: ",
-            address(coinFlipContract)
-        );
-        console.log(
-            "CoinFlipAttack contract deployed at: ",
-            address(coinFlipAttackContract)
-        );
+        console.log("CoinFlip contract deployed at: ", address(coinFlipContract));
+        console.log("CoinFlipAttack contract deployed at: ", address(coinFlipAttackContract));
     }
 
     function testHackFlip() public {
@@ -41,10 +35,6 @@ contract CoinFlipTest is Test {
         }
 
         // Verify we have 10 consecutive wins
-        assertEq(
-            coinFlipContract.consecutiveWins(),
-            10,
-            "Should have 10 consecutive wins"
-        );
+        assertEq(coinFlipContract.consecutiveWins(), 10, "Should have 10 consecutive wins");
     }
 }

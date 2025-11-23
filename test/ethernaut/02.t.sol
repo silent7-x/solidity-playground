@@ -16,8 +16,7 @@ interface Vm {
 }
 
 contract ForgeTestLite {
-    address internal constant HEVM_ADDRESS =
-        address(uint160(uint256(keccak256("hevm cheat code"))));
+    address internal constant HEVM_ADDRESS = address(uint160(uint256(keccak256("hevm cheat code"))));
     Vm internal constant vm = Vm(HEVM_ADDRESS);
 
     function assertEq(address a, address b) internal pure {
@@ -76,10 +75,7 @@ contract FalloutTest is ForgeTestLite {
         console.log("Attacker balance after: ", attackerBalanceAfter);
 
         assertEq(contractBalanceAfter, 0);
-        assertEq(
-            attackerBalanceAfter,
-            attackerBalanceBefore + contractBalanceBefore
-        );
+        assertEq(attackerBalanceAfter, attackerBalanceBefore + contractBalanceBefore);
 
         vm.stopPrank();
     }

